@@ -4,7 +4,7 @@ interface Props {
   description?: string;
 }
 
-const { title, description = 'Markets, AI infrastructure, and the psychology of risk.' } = Astro.props;
+const { title, description = 'Markets, AI, and risk.' } = Astro.props;
 ---
 
 <!doctype html>
@@ -16,24 +16,52 @@ const { title, description = 'Markets, AI infrastructure, and the psychology of 
     <link rel="icon" type="image/svg+xml" href="/katsu-essays/favicon.svg" />
     <title>{title} · Katsu Essays</title>
     <style is:global>
-      :root {--bg:#fcfcfb;--text:#1e1e1e;--muted:#666;--border:#e9e7e4;--accent:#0f172a;}
-      *{box-sizing:border-box} body{margin:0;font-family: Charter, 'Iowan Old Style', 'Palatino Linotype', 'Times New Roman', serif;background:var(--bg);color:var(--text);line-height:1.7}
-      a{color:inherit;text-decoration:none}
-      .container{max-width:1040px;margin:0 auto;padding:0 1.2rem}
-      header{border-bottom:1px solid var(--border);background:rgba(252,252,251,.93);backdrop-filter: blur(4px);position:sticky;top:0;z-index:5}
-      nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 0}
-      .brand{font-size:1.05rem;letter-spacing:.06em;text-transform:uppercase;font-weight:700}
-      .tag{font-size:.9rem;color:var(--muted)}
-      .menu{display:flex;gap:1rem;font-size:.95rem}
-      main{padding:3rem 0 4rem}
-      h1,h2,h3{line-height:1.2;letter-spacing:-0.01em}
-      p{font-size:1.05rem}
-      .grid{display:grid;gap:1.4rem}
-      .card{border:1px solid var(--border);border-radius:16px;padding:1rem;background:white}
-      .card img{width:100%;height:210px;object-fit:cover;border-radius:12px;margin-bottom:1rem}
-      blockquote{margin:1.8rem 0;padding:1rem 1.2rem;border-left:3px solid #a8a29e;background:#fafaf9;font-style:italic;color:#444}
-      footer{border-top:1px solid var(--border);padding:2rem 0;color:var(--muted);font-size:.95rem}
-      @media (min-width: 760px){.hero h1{font-size:3.4rem}.latest{grid-template-columns:repeat(2,1fr)}}
+      :root {
+        --background: #ffffff;
+        --text: #111111;
+        --muted-text: #6e6e73;
+        --border: #e5e5e7;
+        --card-background: #ffffff;
+        --accent: #0071e3;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        background: var(--background);
+        color: var(--text);
+        line-height: 1.7;
+      }
+      a { color: inherit; text-decoration: none; }
+      img { max-width: 100%; display: block; }
+      .container { max-width: 1080px; margin: 0 auto; padding: 0 1.25rem; }
+      .reading-width { max-width: 760px; margin: 0 auto; }
+
+      header { border-bottom: 1px solid var(--border); background: rgba(255, 255, 255, 0.92); backdrop-filter: saturate(180%) blur(20px); position: sticky; top: 0; z-index: 10; }
+      nav { display: flex; justify-content: space-between; align-items: center; min-height: 56px; gap: 1rem; }
+      .brand { font-size: 1rem; font-weight: 600; letter-spacing: -0.01em; }
+      .tag { font-size: 0.82rem; color: var(--muted-text); margin-top: 0.1rem; }
+      .menu { display: flex; gap: 1.15rem; font-size: 0.92rem; color: var(--muted-text); }
+      .menu a:hover { color: var(--text); }
+
+      main { padding: 4.6rem 0 5rem; }
+      h1, h2, h3 { margin: 0; line-height: 1.1; letter-spacing: -0.025em; }
+      h2 { font-size: clamp(1.6rem, 2vw, 2rem); margin-bottom: 1rem; }
+      p { font-size: 1.05rem; margin: 0 0 1rem; }
+      .grid { display: grid; gap: 1.2rem; }
+      .card { border: 1px solid var(--border); border-radius: 14px; background: var(--card-background); }
+
+      article :global(p) { line-height: 1.9; color: #1d1d1f; }
+      article :global(blockquote) { margin: 2rem 0; padding: 1rem 1.15rem; border-left: 3px solid #d2d2d7; color: #3a3a3c; background: #fafafc; border-radius: 0 10px 10px 0; }
+      article :global(img) { border-radius: 12px; border: 1px solid var(--border); margin: 1.8rem auto 0.4rem; }
+      article :global(img + em), article :global(img + i) { display: block; text-align: center; color: var(--muted-text); font-size: 0.9rem; margin-bottom: 1.2rem; }
+
+      footer { border-top: 1px solid var(--border); padding: 2rem 0; color: var(--muted-text); font-size: 0.92rem; }
+      @media (max-width: 760px) {
+        nav { flex-direction: column; align-items: flex-start; padding: 0.75rem 0; }
+        .menu { flex-wrap: wrap; gap: 0.85rem; }
+        main { padding-top: 3.2rem; }
+      }
     </style>
   </head>
   <body>
@@ -42,11 +70,11 @@ const { title, description = 'Markets, AI infrastructure, and the psychology of 
         <nav>
           <div>
             <a class="brand" href="/katsu-essays/">Katsu Essays</a>
-            <div class="tag">Markets, AI infrastructure, and the psychology of risk.</div>
+            <div class="tag">Markets, AI, and risk.</div>
           </div>
           <div class="menu">
+            <a href="/katsu-essays/">Home</a>
             <a href="/katsu-essays/essays">Essays</a>
-            <a href="/katsu-essays/topics">Topics</a>
             <a href="/katsu-essays/about">About</a>
           </div>
         </nav>
