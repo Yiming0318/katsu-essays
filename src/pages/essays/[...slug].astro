@@ -30,6 +30,13 @@ const { Content } = await render(essay);
   h1 { font-size: clamp(2.4rem, 5.6vw, 4rem); margin-bottom: 0.65rem; }
   .subtitle { font-size: clamp(1.2rem, 2.4vw, 1.45rem); color: #5b554d; margin-bottom: 1rem; }
   .meta { font-size: 0.95rem; color: var(--muted-text); margin-bottom: 2.1rem; }
+
+  :global(.reading-width > p) { margin-bottom: 1.15rem; }
+  :global(.reading-width > h2) { margin: 2.4rem 0 1rem; font-size: 1.7rem; }
+  :global(.reading-width > hr) { margin: 2rem 0; }
+  :global(.reading-width blockquote) { margin: 1.5rem 0; padding: 0.9rem 1.1rem; border-left: 4px solid var(--accent); background: #f4eee4; color: #3f3a34; border-radius: 8px; font-style: italic; }
+  :global(.reading-width blockquote p) { margin: 0; }
+  :global(.reading-width img) { width: 100%; margin: 1.4rem 0 1.9rem; border-radius: 12px; border: 1px solid var(--border); background: #fff; }
   hr { border: none; border-top: 1px solid var(--border); margin: 2.7rem 0 1.1rem; }
   .note { font-size: 0.95rem; color: var(--muted-text); }
 </style>
