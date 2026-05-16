@@ -2,10 +2,16 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 <BaseLayout title="About">
-  <article style="max-width:760px">
+  <article class="reading-width about">
     <h1>About</h1>
     <p>Katsu Essays is a personal archive of essays first drafted in Chinese and adapted into English for wider conversations.</p>
+    <p>The Chinese original version is published under 微信公众号：katsu韭菜树洞, and the attached image in this project context is the QR code for that account.</p>
     <p>The focus is on markets, AI infrastructure, and money philosophy—three areas where incentives, psychology, and long-term thinking collide.</p>
     <p>Expect reflective writing, practical frameworks, and occasional disagreement with consensus narratives.</p>
   </article>
 </BaseLayout>
+
+<style>
+  .about h1 { font-size: clamp(2.2rem, 4.5vw, 3.4rem); margin-bottom: 1rem; }
+  .about p { color: #2a3640; }
+</style>
