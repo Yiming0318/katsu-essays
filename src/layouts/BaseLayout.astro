@@ -4,7 +4,7 @@ interface Props {
   description?: string;
 }
 
-const { title, description = 'Markets, AI, and risk.' } = Astro.props;
+const { title, description = 'A personal archive of essays about investing, AI cycles, money, bubbles, and the strange ways humans make decisions under uncertainty.' } = Astro.props;
 ---
 
 <!doctype html>
@@ -70,11 +70,12 @@ const { title, description = 'Markets, AI, and risk.' } = Astro.props;
         <nav>
           <div>
             <a class="brand" href="/katsu-essays/">Katsu Essays</a>
-            <div class="tag">Markets, AI, and risk.</div>
+            <div class="tag">Personal Essay Archive</div>
           </div>
           <div class="menu">
             <a href="/katsu-essays/">Home</a>
             <a href="/katsu-essays/essays">Essays</a>
+            <a href="/katsu-essays/topics">Categories</a>
             <a href="/katsu-essays/about">About</a>
           </div>
         </nav>
