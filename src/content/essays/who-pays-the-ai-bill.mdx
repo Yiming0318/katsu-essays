@@ -1,19 +1,475 @@
 ---
-title: Who Pays the AI Bill?
-subtitle: The real question behind the AI technology cycle.
-description: Following incentives, cost centers, and business-model pressure in AI adoption.
-pubDate: 2026-05-01
-category: AI & Technology Cycles
-readingTime: 8 min read
+title: "Who Pays the AI Bill?"
+subtitle: "AI looks like software, but its cost structure increasingly feels like heavy industry."
+category: "AI & Technology Cycles"
+pubDate: 2026-05-16
+slug: "who-pays-the-ai-bill"
+readingTime: "12 min read"
+description: "The biggest question in this AI cycle is not whether AI is useful. It is who ultimately pays for the increasingly expensive infrastructure behind it."
 featured: false
-coverImage: /images/who-pays-ai-bill/cover.svg
-coverAlt: Data center racks under cool lighting.
+coverImage: "/images/who-pays-ai-bill/cover.svg"
+coverAlt: "An abstract chain of hardware, cloud, models, and end users passing a growing AI bill forward."
 ---
 
-The AI story is often told as a model story. In practice, it is a cost-allocation story.
+import ImageFigure from '../../components/ImageFigure.astro';
 
-Compute, data pipelines, evaluation, and human oversight all require someone to absorb ongoing expense.
+# Who Pays the AI Bill?
 
-> Every AI product is also a financing model disguised as software.
+With the Nasdaq pushing toward new highs on the back of AI, the biggest question is no longer whether AI is useful.
 
-When we ask who wins in AI, we should first ask who can carry infrastructure costs long enough to find durable demand.
+AI is obviously useful.
+
+The real question is simpler and harder:
+
+> It is very expensive. Can it stay this expensive forever?
+
+GPUs are expensive. HBM is expensive. Data centers are expensive. Electricity is expensive. Inference is not free.
+
+For years, we understood SaaS as a beautiful business model. You write the code once. You sell it many times. The marginal cost of serving one more customer is close to zero. As the company scales, gross margins expand, and the business eventually becomes a cash-flow machine.
+
+AI is different.
+
+Every extra prompt burns tokens.  
+Every extra agent loop consumes GPU time.  
+Every coding assistant revision uses real electricity, memory, bandwidth, and depreciation.
+
+That makes the AI story strange.
+
+It looks like software.
+
+But its cost structure increasingly feels like heavy industry.
+
+So the question that matters most is not:
+
+“Will AI change the world?”
+
+The better question is:
+
+> Who ultimately pays this increasingly expensive bill?
+
+---
+
+## 1. The AI loop has only been half-proven
+
+The market currently believes in a beautiful loop.
+
+Nvidia sells GPUs.  
+Memory companies sell HBM.  
+TSMC manufactures advanced chips and packaging.  
+Cloud providers build data centers.  
+OpenAI and Anthropic train stronger models.  
+Application-layer revenue explodes.  
+Enterprises and users keep paying.  
+That money then supports even larger compute investment.
+
+It sounds smooth.
+
+The problem is that only half of this loop has been proven.
+
+What has been proven?
+
+Hardware demand is real.  
+Cloud providers are really building.  
+Model companies are really fighting for compute.  
+OpenAI and Anthropic are really growing revenue.  
+Users are really using the products.
+
+But what has not been fully proven?
+
+Can the application layer maintain high margins over the long run?
+
+Can inference demand become large enough to absorb all the new data centers being built?
+
+Can cloud providers rent out GPU clusters at high prices and high utilization for years?
+
+Can model companies pay their compute bills without relying on round after round of financing?
+
+That is the key.
+
+AI demand is not fake.
+
+The question is whether the demand is expensive enough, broad enough, and durable enough.
+
+<ImageFigure src="/images/who-pays-ai-bill/ai-loop.svg" alt="An abstract loop connecting chips, clouds, models, applications, and users." caption="The AI loop has proven demand on the input side, but not yet durable margins on the output side." />
+
+---
+
+## 2. Hardware has already been paid. That does not mean the final bill has been settled.
+
+In the AI value chain, the most comfortable position today is the hardware side.
+
+Nvidia has been paid.  
+Samsung, SK Hynix, and Micron have been paid.  
+TSMC has been paid.  
+Server vendors, power providers, data center operators, and optical networking suppliers are all being paid.
+
+That makes sense.
+
+In an arms race, the first people to make money are always the arms dealers.
+
+But the fact that arms dealers make money does not mean the people fighting the war will earn it back.
+
+The hardware supplier’s revenue becomes someone else’s capex, depreciation, long-term contract, and cash-flow burden.
+
+That is what makes this cycle so unusual.
+
+The most certain profits in the AI value chain are coming from the earliest stage of capital expenditure.
+
+But the responsibility for proving the return sits at the very end of the chain: the software application layer.
+
+That is uncomfortable.
+
+Because right now, the application layer does not yet look full of products that are both irreplaceable and able to raise prices indefinitely.
+
+Many AI apps are still in the stage of:
+
+Useful.  
+Cool.  
+Productivity-enhancing.
+
+But will users keep paying high prices for them?
+
+Will enterprises deploy them at scale?
+
+Will AI become a rigid budget item?
+
+That has not been fully proven.
+
+<ImageFigure src="/images/who-pays-ai-bill/hardware-vs-software.svg" alt="Hardware suppliers collecting cash while software applications carry the future bill." caption="The early certainty is on hardware revenue; the late uncertainty is on software-level return." />
+
+---
+
+## 3. The super cycle may be real. Super margins will not belong to everyone forever.
+
+GPUs, HBM, DRAM, NAND, and CoWoS are all being discussed as part of a new super cycle.
+
+I think we need to separate two things.
+
+The super cycle may be real.
+
+Super margins are not guaranteed to be real forever.
+
+During a shortage, whoever controls the bottleneck earns exceptional margins.
+
+If GPUs are scarce, Nvidia wins.  
+If HBM is scarce, memory companies win.  
+If advanced packaging is scarce, TSMC wins.  
+If data center capacity is scarce, cloud providers can sell capacity at high prices.
+
+But once expansion begins, the hard questions return.
+
+Who remains a true bottleneck?
+
+Who turns back into an ordinary cyclical supplier?
+
+Whose margin is structural?
+
+Whose margin is only the result of temporary shortage?
+
+Memory is especially dangerous here.
+
+When companies like Micron and SanDisk-style memory names rally aggressively, it does not necessarily mean the market is wrong. Short-term earnings can be explosive. Prices can rise. Customers can rush to secure supply.
+
+But memory has one dangerous feature:
+
+> When profits are highest, the P/E ratio often looks lowest.
+
+That is because the “E” may be peak earnings.
+
+Cyclical stocks are often most seductive at the most dangerous moment.
+
+Fundamentals look strongest.  
+News is most bullish.  
+Analysts keep raising estimates.  
+The stock keeps making new highs.  
+Valuation still appears explainable.
+
+But the real question is not how much money the company makes this year.
+
+The real question is:
+
+> Is this peak earnings?
+
+Capacity announcements will not kill the cycle tomorrow. But once peak margin becomes visible, the countdown has already started.
+
+HBM, advanced packaging, yield improvement, EUV, and testing all take time. Meaningful supply may not arrive until 2027 or 2028.
+
+But capital markets do not wait for supply to physically arrive.
+
+Markets trade expectations.
+
+And they can start trading peak margin long before the actual peak is visible in reported earnings.
+
+---
+
+## 4. Cloud providers should fear idle GPUs more than scarce GPUs
+
+Once the hardware has been sold, the bill moves to the cloud providers.
+
+Azure, AWS, and Google Cloud are building data centers, buying GPUs, signing power contracts, and developing their own chips.
+
+But what cloud providers really need to prove is not how many GPUs they can buy.
+
+They need to prove that those GPUs can be used at high utilization and high prices for a long time.
+
+A GPU that sits idle is depreciation.
+
+A GPU rented out cheaply is margin compression.
+
+Only a GPU rented out at high price and high utilization becomes a real asset.
+
+So the key metric for AI cloud is not capex.
+
+It is utilization.
+
+Right now, the market is tight. OpenAI, Anthropic, Meta, and Google are all fighting for compute. Anthropic is locking capacity. OpenAI is signing commitments. It looks like the whole world is short GPUs.
+
+But the deeper question is whether this demand structure is healthy.
+
+Healthy cloud demand should look like electricity or water: thousands of enterprises using it every month, with diversified customers, stable demand, and high switching costs.
+
+Current AI compute demand looks more like an arms race.
+
+A small number of frontier labs consume a massive amount of capacity, and cloud providers use backlog to prove that demand exists.
+
+That does not mean demand is fake.
+
+It means demand may be concentrated like a single point of failure.
+
+If Anthropic and OpenAI continue growing exponentially, the loop can keep turning.
+
+But if their growth slows, and enterprise inference demand does not catch up, what happens to all the new data centers?
+
+GPU cloud could shift from a scarce asset to something more like airline seats.
+
+Empty capacity is lost revenue.
+
+And when capacity is empty, price competition begins.
+
+<ImageFigure src="/images/who-pays-ai-bill/cloud-utilization.svg" alt="A cloud data center with some GPU racks glowing and some sitting dark." caption="In cloud AI economics, utilization often matters more than headline capex." />
+
+---
+
+## 5. Training fills the hole. Inference pays the bill.
+
+A lot of current AI demand comes from training.
+
+Training large models.  
+Post-training.  
+Experiments.  
+Multiple model runs.  
+Agent benchmarks.  
+Model arms races.
+
+Training burns money.
+
+But training is more like building a nuclear weapon.
+
+It is massive, periodic, and winner-takes-most.
+
+The thing that can support data centers over the long run is not training.
+
+It is inference.
+
+Inference is more like electricity.
+
+It happens every day, every hour, across every user and every enterprise workflow.
+
+For AI capex to truly make sense, the demand has to shift from a frontier lab training arms race into a society-wide inference utility bill.
+
+If every programmer has a coding agent, every salesperson and customer support worker has an AI agent, every lawyer and accountant uses AI in their workflow, and every phone and computer makes dozens or hundreds of model calls in the background, then today’s data centers may still not be enough.
+
+That is the bull case.
+
+But if models become cheaper, smaller models are good enough, enterprise adoption is slow, agent ROI is unstable, and users refuse to pay for unlimited tokens, then today’s capex may have been built too quickly.
+
+So the situation is this:
+
+Training proves that frontier labs are willing to spend.
+
+Inference proves that society is willing to pay.
+
+So far, the first part has been proven.
+
+The second, and more important part, has not yet caught up.
+
+<ImageFigure src="/images/who-pays-ai-bill/inference-bill.svg" alt="A stream of small inference requests turning into a large utility bill." caption="Training can light the fire, but recurring inference must sustain the economics." />
+
+---
+
+## 6. Anthropic is the strongest sample — and the biggest stress test
+
+If there is one company that looks like the application layer is really working, it is probably Anthropic.
+
+Claude Code no longer feels like an ordinary chatbot.
+
+It feels like a production tool inside a programmer’s workflow.
+
+It is not just fun.  
+It is not just a demo.  
+It can actually replace part of high-cost cognitive labor.
+
+Anthropic’s revenue growth, enterprise adoption, and demand for compute all suggest one thing:
+
+AI application demand is real.
+
+But the key question is not whether the product is useful.
+
+The key question is whether this is a high-quality, high-return software business.
+
+If a product’s revenue grows rapidly, but supporting that growth requires larger cloud commitments, more GPUs, and more financing, then it is not the traditional light-asset SaaS flywheel.
+
+A traditional SaaS flywheel looks like this:
+
+Useful software → user growth → high gross margins → more cash flow → more R&D.
+
+A frontier AI flywheel looks heavier:
+
+Stronger models → more users → rapid revenue growth → more compute demand → larger commitments → more financing → stronger models.
+
+That flywheel can be powerful.
+
+But it is heavy.
+
+So the right criticism of Anthropic is not “it cannot pay.”
+
+It is:
+
+> It has not yet proven that it can pay without the capital markets.
+
+This is not a bearish view on Anthropic.
+
+In fact, Anthropic is one of the strongest bull cases for the AI application layer.
+
+But if even the strongest sample needs continuous financing to lock in future compute, then the full AI capex loop has not yet become self-sustaining.
+
+It has proven demand.
+
+It has proven revenue.
+
+It has proven growth.
+
+It has not fully proven free cash flow.
+
+---
+
+## 7. A flourishing AI application layer may be real, but it will not benefit everyone equally
+
+There is still a very positive scenario.
+
+Model capability keeps improving.  
+Inference costs fall quickly.  
+Development barriers decline.  
+Applications flourish.  
+AI enters every industry, every job, and every device.  
+People’s lives become increasingly dependent on AI.
+
+I think this long-term direction is plausible.
+
+In some light form, it is already happening.
+
+Coding, email writing, research, translation, meeting summaries, image generation — these are already becoming habits.
+
+The deeper version, where AI truly acts as an agent executing complex tasks on behalf of humans, may take five years, ten years, or longer.
+
+But there is a paradox.
+
+The stronger the models become, the larger total AI demand may become.
+
+But the more similar models become, the weaker model companies’ pricing power may become.
+
+If models become commoditized, the application layer can still flourish.
+
+But the profits may not stay with model companies.
+
+They may flow to companies that control distribution: Apple, Google, Microsoft.
+
+They may flow to companies that control enterprise workflows: Salesforce, ServiceNow, Adobe.
+
+They may flow to companies that control cloud infrastructure: AWS, Azure, Google Cloud.
+
+They may also flow to a small number of AI-native applications with real use cases, proprietary data, and closed-loop ecosystems.
+
+So even if AI applications flourish, that does not automatically mean every model company or every cloud capex plan is justified.
+
+Those are two different questions.
+
+They should not be mixed together.
+
+---
+
+## 8. The biggest risk: the long term may be right, but the short term is too front-loaded
+
+So is AI a bubble?
+
+The word “bubble” is too cheap.
+
+AI demand is real.  
+Revenue is real.  
+Technical progress is real.  
+OpenAI and Anthropic’s growth is real.  
+Hardware companies are making real money.
+
+The problem is that the bill is arriving very quickly, while the profit loop has not fully closed.
+
+What has been proven is the first half:
+
+Hardware can be sold.  
+Cloud providers are willing to build.  
+Model companies are willing to sign compute commitments.  
+Capital markets are willing to finance them.  
+Users are willing to try the products.  
+Enterprises are willing to pay for part of the story.
+
+What has not been proven is the second half:
+
+Can society-wide inference demand absorb all of this existing and upcoming compute at a high enough price, high enough margin, and with a broad enough customer base?
+
+If yes, this is a real super cycle.
+
+If not, it becomes a classic heavy-asset cycle.
+
+At first, everyone thinks their own buildout is reasonable.
+
+Later, the whole industry discovers that supply is too large.
+
+My current view is this:
+
+AI is probably real in the long run.
+
+But the market has pulled ten years of future expectations into two or three years of capex budgets.
+
+That is what makes this cycle both dangerous and fascinating.
+
+The danger is not that AI is useless.
+
+The danger is that AI is so useful that nobody wants to miss it, so everyone starts paying upfront at almost any cost.
+
+Whether the money can eventually be earned back is still undecided.
+
+For now, Mr. Market is still patient.
+
+He is willing to wait.
+
+The final answer has not yet been revealed.
+
+<ImageFigure src="/images/who-pays-ai-bill/capex-cycle.svg" alt="A large future AI bill being passed along the chain from hardware to cloud to models to users." caption="The unresolved question is where durable cash flow finally appears in the chain." />
+
+---
+
+## Final thought
+
+The real question in this AI cycle is not the upper limit of model capability.
+
+It is whether the cash-flow loop actually exists.
+
+If it exists, today’s capex is necessary upfront investment.
+
+If it does not, then the cost has merely been transferred forward, hidden behind financing, growth curves, and beautiful expectations.
+
+In the end, the market will not only ask whose model is stronger.
+
+It will ask:
+
+> Who pays the bill?  
+> And who can actually afford it?
