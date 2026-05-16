@@ -1,32 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
-  <title>Editorial AI illustration placeholder</title>
-  <desc>Muted editorial placeholder artwork for the AI cost-cycle essay.</desc>
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#f7f2e9"/>
-      <stop offset="100%" stop-color="#ece6dc"/>
-    </linearGradient>
-    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#9b8f7a"/>
-      <stop offset="100%" stop-color="#7b6f5d"/>
-    </linearGradient>
-  </defs>
-  <rect width="1600" height="900" fill="url(#bg)"/>
-  <g opacity="0.3" stroke="#9f9381" stroke-width="2" fill="none">
-    <path d="M120 700 C 340 500, 520 760, 760 560 S 1250 320, 1480 460"/>
-    <path d="M120 760 C 340 560, 520 820, 760 620 S 1250 380, 1480 520"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title>The AI loop has only been half-proven</title>
+  <desc>A five-node circular AI loop where half the loop is solid and half is dashed and uncertain.</desc>
+  <rect width="1200" height="675" fill="#f4f1ea"/>
+  <circle cx="600" cy="337.5" r="250" fill="#eee7dc" stroke="#c6b9a8"/>
+
+  <g fill="none" stroke-linecap="round" stroke-width="12">
+    <path d="M600 100 A 238 238 0 0 1 826 253" stroke="#6f6558"/>
+    <path d="M826 253 A 238 238 0 0 1 747 545" stroke="#6f6558"/>
+    <path d="M747 545 A 238 238 0 0 1 420 546" stroke="#9e8f7b" stroke-dasharray="16 20"/>
+    <path d="M420 546 A 238 238 0 0 1 321 241" stroke="#9e8f7b" stroke-dasharray="16 20"/>
+    <path d="M321 241 A 238 238 0 0 1 600 100" stroke="#9e8f7b" stroke-dasharray="16 20"/>
   </g>
-  <g>
-    <rect x="190" y="220" width="320" height="160" rx="20" fill="#f3ede3" stroke="#9f9381"/>
-    <rect x="640" y="130" width="320" height="160" rx="20" fill="#f3ede3" stroke="#9f9381"/>
-    <rect x="1090" y="220" width="320" height="160" rx="20" fill="#f3ede3" stroke="#9f9381"/>
-    <rect x="640" y="500" width="320" height="160" rx="20" fill="#f3ede3" stroke="#9f9381"/>
+
+  <g fill="#fffaf2" stroke="#5f574c" stroke-width="4">
+    <circle cx="600" cy="100" r="34"/>
+    <circle cx="826" cy="253" r="34"/>
+    <circle cx="747" cy="545" r="34"/>
+    <circle cx="420" cy="546" r="34"/>
+    <circle cx="321" cy="241" r="34"/>
   </g>
-  <g stroke="url(#accent)" stroke-width="8" stroke-linecap="round">
-    <line x1="510" y1="300" x2="640" y2="210"/>
-    <line x1="960" y1="210" x2="1090" y2="300"/>
-    <line x1="1120" y1="380" x2="900" y2="500"/>
-    <line x1="700" y1="500" x2="510" y2="380"/>
+
+  <g fill="none" stroke="#7f705e" stroke-width="3" stroke-linecap="round">
+    <rect x="585" y="85" width="30" height="30" rx="4"/>
+    <ellipse cx="826" cy="253" rx="16" ry="10"/>
+    <path d="M810 253v14c0 6 7 10 16 10s16-4 16-10v-14"/>
+    <path d="M733 532h28M733 545h28M733 558h18"/>
+    <rect x="406" y="532" width="28" height="28" rx="6"/>
+    <path d="M314 241c0-7 6-13 13-13 6 0 12 6 12 13 0 11-9 18-25 29 8 0 16 0 24 0"/>
   </g>
-  <text x="800" y="790" text-anchor="middle" font-family="Georgia, serif" font-size="42" fill="#5d554a">AI Infrastructure Economics</text>
 </svg>
