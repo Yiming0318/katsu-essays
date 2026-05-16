@@ -1,20 +1,22 @@
 ---
+import { withBase } from '../utils/paths';
 const pathname = Astro.url.pathname;
 const links = [
-  { href: '/katsu-essays/', label: 'Home' },
-  { href: '/katsu-essays/essays', label: 'Essays' },
-  { href: '/katsu-essays/topics', label: 'Categories' },
-  { href: '/katsu-essays/about', label: 'About' }
+  { href: withBase('/'), label: 'Home' },
+  { href: withBase('/essays'), label: 'Essays' },
+  { href: withBase('/topics'), label: 'Categories' },
+  { href: withBase('/about'), label: 'About' }
 ];
 
-const isActive = (href: string) => (href === '/katsu-essays/' ? pathname === href : pathname.startsWith(href));
+const home = withBase('/');
+const isActive = (href: string) => (href === home ? pathname === href : pathname.startsWith(href));
 ---
 
 <header class="site-header">
   <div class="accent-line"></div>
   <div class="site-container">
     <nav>
-      <a class="brand-wrap" href="/katsu-essays/">
+      <a class="brand-wrap" href={withBase("/")}>
         <span class="brand">Katsu Essays</span>
         <span class="tag">Personal Essay Archive</span>
       </a>

@@ -1,0 +1,40 @@
+---
+import { assetPath } from '../utils/paths';
+
+interface Props {
+  src: string;
+  alt: string;
+  caption?: string;
+}
+
+const { src, alt, caption } = Astro.props;
+---
+
+<figure class="image-figure">
+  <img src={assetPath(src)} alt={alt} loading="lazy" />
+  {caption && <figcaption>{caption}</figcaption>}
+</figure>
+
+<style>
+  .image-figure {
+    margin: 2.5rem auto;
+  }
+
+  .image-figure img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    background: var(--card-background);
+    object-fit: cover;
+  }
+
+  .image-figure figcaption {
+    margin-top: 0.7rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--muted-text);
+  }
+</style>

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection, render } from 'astro:content';
+import { assetPath } from '../../utils/paths';
 
 export async function getStaticPaths() {
   const essays = await getCollection('essays');
@@ -12,31 +13,44 @@ const { Content } = await render(essay);
 ---
 
 <BaseLayout title={essay.data.title} description={essay.data.description}>
-  <article class="reading-width">
-    <img src={essay.data.coverImage} alt={essay.data.coverAlt} class="cover" />
-    <div class="category">{essay.data.category}</div>
-    <h1>{essay.data.title}</h1>
-    <p class="subtitle">{essay.data.subtitle}</p>
-    <div class="meta">{essay.data.pubDate.toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'})} · {essay.data.readingTime}</div>
-    <Content />
-    <hr />
-    <p class="note">These essays are personal reflections, not investment advice.</p>
+  <article class="article-page">
+    <header class="article-header">
+      <div class="category">{essay.data.category}</div>
+      <h1>{essay.data.title}</h1>
+      <p class="subtitle">{essay.data.subtitle}</p>
+      <div class="meta">{essay.data.pubDate.toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'})} · {essay.data.readingTime}</div>
+      <img src={assetPath(essay.data.coverImage)} alt={essay.data.coverAlt} class="cover" />
+    </header>
+
+    <section class="article-content">
+      <Content />
+      <hr />
+      <p class="note">These essays are personal reflections, not investment advice.</p>
+    </section>
   </article>
 </BaseLayout>
 
 <style>
-  .cover { width: 100%; border-radius: 18px; margin: 0 0 1.7rem; }
+  .article-page { margin: 0 auto; padding: 48px 24px; }
+  .article-header { max-width: 760px; margin: 0 auto 2.5rem; }
   .category { text-transform: uppercase; letter-spacing: 0.11em; color: var(--muted-text); font-size: 0.78rem; margin-bottom: 0.6rem; }
-  h1 { font-size: clamp(2.4rem, 5.6vw, 4rem); margin-bottom: 0.65rem; }
-  .subtitle { font-size: clamp(1.2rem, 2.4vw, 1.45rem); color: #5b554d; margin-bottom: 1rem; }
-  .meta { font-size: 0.95rem; color: var(--muted-text); margin-bottom: 2.1rem; }
+  h1 { font-size: clamp(2rem, 4.8vw, 3.4rem); margin-bottom: 0.8rem; line-height: 1.1; }
+  .subtitle { font-size: clamp(1.12rem, 2.2vw, 1.35rem); color: #5b554d; line-height: 1.6; margin-bottom: 0.95rem; max-width: 58ch; }
+  .meta { font-size: 0.9rem; color: var(--muted-text); margin-bottom: 1.5rem; }
+  .cover { width: 100%; max-height: 420px; object-fit: cover; border-radius: 16px; border: 1px solid var(--border); background: var(--card-background); display: block; }
 
-  :global(.reading-width > p) { margin-bottom: 1.15rem; }
-  :global(.reading-width > h2) { margin: 2.4rem 0 1rem; font-size: 1.7rem; }
-  :global(.reading-width > hr) { margin: 2rem 0; }
-  :global(.reading-width blockquote) { margin: 1.5rem 0; padding: 0.9rem 1.1rem; border-left: 4px solid var(--accent); background: #f4eee4; color: #3f3a34; border-radius: 8px; font-style: italic; }
-  :global(.reading-width blockquote p) { margin: 0; }
-  :global(.reading-width img) { width: 100%; margin: 1.4rem 0 1.9rem; border-radius: 12px; border: 1px solid var(--border); background: #fff; }
-  hr { border: none; border-top: 1px solid var(--border); margin: 2.7rem 0 1.1rem; }
+  .article-content { max-width: 720px; margin: 0 auto; font-size: 18px; line-height: 1.75; color: var(--text); }
+  :global(.article-content p) { margin: 0 0 1.35rem; }
+  :global(.article-content h2) { margin: 3.5rem 0 1rem; font-size: 1.8rem; line-height: 1.25; }
+  :global(.article-content h3) { margin: 2.2rem 0 0.8rem; font-size: 1.35rem; line-height: 1.3; }
+  :global(.article-content a) { color: var(--text); text-decoration: underline; text-decoration-color: color-mix(in srgb, var(--accent) 65%, transparent); text-underline-offset: 3px; }
+  :global(.article-content blockquote) { margin: 1.9rem 0; padding: 18px 22px; border-left: 3px solid var(--accent); background: var(--card-background); border-radius: 12px; color: #4a453f; }
+  :global(.article-content blockquote p:last-child) { margin-bottom: 0; }
+  :global(.article-content ul, .article-content ol) { padding-left: 1.3rem; margin: 0.8rem 0 1.4rem; }
+  :global(.article-content li) { margin: 0.4rem 0; }
+  :global(.article-content hr) { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
+  :global(.article-content img) { display: block; width: 100%; max-width: 100%; height: auto; margin: 2.5rem auto; border-radius: 16px; border: 1px solid var(--border); background: var(--card-background); object-fit: cover; }
+  :global(.article-content figure) { margin: 2.5rem auto; }
+  :global(.article-content figcaption) { margin-top: 0.7rem; text-align: center; font-size: 0.9rem; color: var(--muted-text); }
   .note { font-size: 0.95rem; color: var(--muted-text); }
 </style>
