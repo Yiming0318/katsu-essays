@@ -5,11 +5,28 @@ import Container from '../../components/Container.astro';
 import { getCollection } from 'astro:content';
 import { withBase } from '../../utils/paths';
 const essays=(await getCollection('essays')).sort((a,b)=>b.data.pubDate.getTime()-a.data.pubDate.getTime());
-const filters=['All','Markets & Investing','AI & Technology Cycles','Money & Human Nature'];
+const filters=[
+  {label:'All',id:'all-essays'},
+  {label:'Markets & Investing',id:'markets-investing'},
+  {label:'AI & Technology Cycles',id:'ai-technology-cycles'},
+  {label:'Money & Human Nature',id:'money-human-nature'}
+];
+const categorySections = filters.slice(1).map((filter)=>({
+  ...filter,
+  essays: essays.filter((essay)=>essay.data.category === filter.label)
+}));
 ---
 <BaseLayout title="Essays"><Container>
 <section class="section intro"><h1>Essays</h1><p>Browse essays by topic, from investing psychology to AI cycles and money philosophy.</p></section>
-<section class="pills">{filters.map((f)=><span class:list={['pill',{active:f==='All'}]}>{f}</span>)}</section>
-<section class="section"><div class="grid cards-grid">{essays.map((essay)=><EssayCard href={`${withBase('/essays')}/${essay.slug}/`} title={essay.data.title} subtitle={essay.data.subtitle} date={essay.data.pubDate} category={essay.data.category} image={essay.data.coverImage} alt={essay.data.coverAlt} readingTime={essay.data.readingTime} />)}</div></section>
+<section class="pills">{filters.map((f)=><a href={`#${f.id}`} class:list={['pill',{active:f.label==='All'}]}>{f.label}</a>)}</section>
+<section class="section topic-section" id="all-essays"><h2>All Essays</h2><div class="grid cards-grid">{essays.map((essay)=><EssayCard href={`${withBase('/essays')}/${essay.slug}/`} title={essay.data.title} subtitle={essay.data.subtitle} date={essay.data.pubDate} category={essay.data.category} image={essay.data.coverImage} alt={essay.data.coverAlt} readingTime={essay.data.readingTime} />)}</div></section>
+{categorySections.map((section)=>(
+  <section class="section topic-section" id={section.id}>
+    <h2>{section.label}</h2>
+    <div class="grid cards-grid">
+      {section.essays.map((essay)=><EssayCard href={`${withBase('/essays')}/${essay.slug}/`} title={essay.data.title} subtitle={essay.data.subtitle} date={essay.data.pubDate} category={essay.data.category} image={essay.data.coverImage} alt={essay.data.coverAlt} readingTime={essay.data.readingTime} />)}
+    </div>
+  </section>
+))}
 </Container></BaseLayout>
-<style>.intro p{color:#4e4841}.pills{display:flex;gap:.55rem;flex-wrap:wrap}.pill{border:1px solid var(--border);padding:.4rem .8rem;border-radius:999px;font-size:.85rem;color:var(--muted-text)}.pill.active{color:var(--text);background:#f2ede5}.cards-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:1.1rem;margin-top:.4rem}@media (max-width:980px){.cards-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (max-width:760px){.cards-grid{grid-template-columns:1fr}}</style>
+<style>.intro p{color:#4e4841}.pills{display:flex;gap:.55rem;flex-wrap:wrap}.pill{border:1px solid var(--border);padding:.4rem .8rem;border-radius:999px;font-size:.85rem;color:var(--muted-text);text-decoration:none}.pill.active{color:var(--text);background:#f2ede5}.topic-section{scroll-margin-top:6rem}.topic-section h2{font-size:1.35rem;margin-bottom:.85rem}.cards-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:1.1rem;margin-top:.4rem}@media (max-width:980px){.cards-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (max-width:760px){.cards-grid{grid-template-columns:1fr}}</style>
