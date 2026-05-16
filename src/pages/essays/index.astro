@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import EssayCard from '../../components/EssayCard.astro';
+import { getCollection } from 'astro:content';
+
+const essays = (await getCollection('essays')).sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+---
+<BaseLayout title="Essays">
+  <h1>Essays</h1>
+  <p style="max-width:70ch;color:#555">An archive of translated essays from Chinese originals.</p>
+  <div class="grid latest">
+    {essays.map((essay) => (
+      <EssayCard
+        href={`/katsu-essays/essays/${essay.slug}/`}
+        title={essay.data.title}
+        subtitle={essay.data.subtitle}
+        date={essay.data.pubDate}
+        category={essay.data.category}
+        image={essay.data.coverImage}
+        alt={essay.data.coverAlt}
+        readingTime={essay.data.readingTime}
+      />
+    ))}
+  </div>
+</BaseLayout>

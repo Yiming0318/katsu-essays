@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import EssayCard from '../components/EssayCard.astro';
+import { getCollection } from 'astro:content';
+
+const essays = (await getCollection('essays')).sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+const featured = essays.find((essay) => essay.data.featured) ?? essays[0];
+const latest = essays.slice(0, 3);
+const topics = ['Markets', 'AI & Infrastructure', 'Money Philosophy'];
+---
+
+<BaseLayout title="Home">
+  <section class="hero" style="margin-bottom:3rem">
+    <p style="text-transform:uppercase;letter-spacing:.08em;color:#6b7280">Personal Essay Archive</p>
+    <h1 style="max-width:14ch;margin:.3rem 0 1rem">Essays on risk, money, and technological momentum.</h1>
+    <p style="max-width:70ch;color:#444">I write about markets, AI infrastructure, money, and the strange ways people make decisions under risk.</p>
+  </section>
+
+  <section style="margin-bottom:3rem">
+    <h2>Featured Essay</h2>
+    <EssayCard
+      href={`/katsu-essays/essays/${featured.slug}/`}
+      title={featured.data.title}
+      subtitle={featured.data.subtitle}
+      date={featured.data.pubDate}
+      category={featured.data.category}
+      image={featured.data.coverImage}
+      alt={featured.data.coverAlt}
+      readingTime={featured.data.readingTime}
+    />
+  </section>
+
+  <section style="margin-bottom:3rem">
+    <h2>Latest Essays</h2>
+    <div class="grid latest">
+      {latest.map((essay) => (
+        <EssayCard
+          href={`/katsu-essays/essays/${essay.slug}/`}
+          title={essay.data.title}
+          subtitle={essay.data.subtitle}
+          date={essay.data.pubDate}
+          category={essay.data.category}
+          image={essay.data.coverImage}
+          alt={essay.data.coverAlt}
+          readingTime={essay.data.readingTime}
+        />
+      ))}
+    </div>
+  </section>
+
+  <section>
+    <h2>Topics</h2>
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr))">
+      {topics.map((topic) => <div class="card" style="font-size:1.15rem">{topic}</div>)}
+    </div>
+  </section>
+</BaseLayout>

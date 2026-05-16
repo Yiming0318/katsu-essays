@@ -1,0 +1,24 @@
+---
+interface Props {
+  href: string;
+  title: string;
+  subtitle: string;
+  date: Date;
+  category: string;
+  image: string;
+  alt: string;
+  readingTime: string;
+}
+
+const { href, title, subtitle, date, category, image, alt, readingTime } = Astro.props;
+---
+
+<article class="card">
+  <a href={href}>
+    <img src={image} alt={alt} loading="lazy" />
+    <div style="font-size:.82rem;text-transform:uppercase;letter-spacing:.08em;color:#6b7280">{category}</div>
+    <h3 style="margin:.35rem 0 .5rem;font-size:1.55rem">{title}</h3>
+    <p style="margin:0 0 .7rem;color:#555">{subtitle}</p>
+    <div style="font-size:.9rem;color:#777">{date.toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'})} · {readingTime}</div>
+  </a>
+</article>
