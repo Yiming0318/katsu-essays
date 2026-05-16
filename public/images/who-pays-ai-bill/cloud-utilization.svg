@@ -1,32 +1,39 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
-  <title>Editorial AI illustration placeholder</title>
-  <desc>Muted editorial placeholder artwork for the AI cost-cycle essay.</desc>
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#f7f2e9"/>
-      <stop offset="100%" stop-color="#ece6dc"/>
-    </linearGradient>
-    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#9b8f7a"/>
-      <stop offset="100%" stop-color="#7b6f5d"/>
-    </linearGradient>
-  </defs>
-  <rect width="1600" height="900" fill="url(#bg)"/>
-  <g opacity="0.3" stroke="#9f9381" stroke-width="2" fill="none">
-    <path d="M120 700 C 340 500, 520 760, 760 560 S 1250 320, 1480 460"/>
-    <path d="M120 760 C 340 560, 520 820, 760 620 S 1250 380, 1480 520"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title>Cloud utilization risk</title>
+  <desc>Data center racks with a mix of active and idle GPU capacity.</desc>
+  <rect width="1200" height="675" fill="#f4f1ea"/>
+  <rect x="90" y="90" width="1020" height="495" rx="24" fill="#eee7dc" stroke="#c6b9a8"/>
+
+  <g fill="#fffaf2" stroke="#5f574c" stroke-width="4">
+    <rect x="170" y="160" width="130" height="350" rx="12"/>
+    <rect x="330" y="160" width="130" height="350" rx="12"/>
+    <rect x="490" y="160" width="130" height="350" rx="12"/>
+    <rect x="650" y="160" width="130" height="350" rx="12"/>
+    <rect x="810" y="160" width="130" height="350" rx="12"/>
   </g>
+
   <g>
-    <rect x="190" y="220" width="320" height="160" rx="20" fill="#f3ede3" stroke="#9f9381"/>
-    <rect x="640" y="130" width="320" height="160" rx="20" fill="#f3ede3" stroke="#9f9381"/>
-    <rect x="1090" y="220" width="320" height="160" rx="20" fill="#f3ede3" stroke="#9f9381"/>
-    <rect x="640" y="500" width="320" height="160" rx="20" fill="#f3ede3" stroke="#9f9381"/>
+    <rect x="185" y="190" width="100" height="40" rx="6" fill="#baa17e"/>
+    <rect x="185" y="247" width="100" height="40" rx="6" fill="#baa17e"/>
+    <rect x="185" y="304" width="100" height="40" rx="6" fill="#baa17e"/>
+    <rect x="345" y="190" width="100" height="40" rx="6" fill="#baa17e"/>
+    <rect x="345" y="247" width="100" height="40" rx="6" fill="#baa17e"/>
+
+    <rect x="505" y="190" width="100" height="40" rx="6" fill="#d8cdbd"/>
+    <rect x="505" y="247" width="100" height="40" rx="6" fill="#d8cdbd"/>
+    <rect x="505" y="304" width="100" height="40" rx="6" fill="#d8cdbd"/>
+
+    <rect x="665" y="190" width="100" height="40" rx="6" fill="#baa17e"/>
+    <rect x="665" y="247" width="100" height="40" rx="6" fill="#baa17e"/>
+    <rect x="665" y="304" width="100" height="40" rx="6" fill="#d8cdbd"/>
+
+    <rect x="825" y="190" width="100" height="40" rx="6" fill="#d8cdbd"/>
+    <rect x="825" y="247" width="100" height="40" rx="6" fill="#d8cdbd"/>
+    <rect x="825" y="304" width="100" height="40" rx="6" fill="#d8cdbd"/>
   </g>
-  <g stroke="url(#accent)" stroke-width="8" stroke-linecap="round">
-    <line x1="510" y1="300" x2="640" y2="210"/>
-    <line x1="960" y1="210" x2="1090" y2="300"/>
-    <line x1="1120" y1="380" x2="900" y2="500"/>
-    <line x1="700" y1="500" x2="510" y2="380"/>
+
+  <g stroke="#6f6558" stroke-width="3" stroke-linecap="round">
+    <line x1="210" y1="540" x2="910" y2="540"/>
+    <line x1="210" y1="560" x2="910" y2="560" opacity="0.5"/>
   </g>
-  <text x="800" y="790" text-anchor="middle" font-family="Georgia, serif" font-size="42" fill="#5d554a">AI Infrastructure Economics</text>
 </svg>

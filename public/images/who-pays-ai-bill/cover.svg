@@ -1,1 +1,49 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" fill="none"><rect width="1200" height="750" fill="#F3F0EA"/><rect x="140" y="120" width="920" height="510" rx="24" fill="#ECE5D9"/><rect x="220" y="210" width="300" height="320" rx="16" fill="#F7F4EE" stroke="#CCC1B2"/><rect x="570" y="210" width="410" height="95" rx="14" fill="#F7F4EE"/><rect x="570" y="325" width="410" height="95" rx="14" fill="#F7F4EE"/><rect x="570" y="440" width="250" height="95" rx="14" fill="#F7F4EE"/><path d="M255 480C315 380 420 360 485 265" stroke="#7F6A54" stroke-width="12" stroke-linecap="round"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title>Who Pays the AI Bill cover illustration</title>
+  <desc>An invoice is passed from chip makers to cloud providers to model companies and finally to apps and users.</desc>
+  <rect width="1200" height="675" fill="#f4f1ea"/>
+  <rect x="70" y="72" width="1060" height="531" rx="24" fill="#eee7dc" stroke="#c6b9a8"/>
+
+  <g fill="#f9f6f0" stroke="#5f574c" stroke-width="3">
+    <rect x="140" y="258" width="180" height="130" rx="16"/>
+    <rect x="385" y="238" width="180" height="130" rx="16"/>
+    <rect x="630" y="258" width="180" height="130" rx="16"/>
+    <rect x="875" y="278" width="180" height="130" rx="16"/>
+  </g>
+
+  <g stroke="#6a6156" stroke-width="4" fill="none" stroke-linecap="round">
+    <rect x="175" y="292" width="42" height="42" rx="6"/>
+    <path d="M196 292v42M175 313h42"/>
+
+    <path d="M430 338h90"/>
+    <path d="M448 320l18 18-18 18"/>
+
+    <ellipse cx="475" cy="302" rx="30" ry="18"/>
+    <path d="M445 302v26c0 10 14 18 30 18s30-8 30-18v-26"/>
+
+    <path d="M675 338h90"/>
+    <path d="M693 320l18 18-18 18"/>
+
+    <path d="M674 300h92M674 322h92M674 344h70"/>
+
+    <path d="M920 338h90"/>
+    <path d="M938 320l18 18-18 18"/>
+
+    <circle cx="940" cy="310" r="14"/>
+    <path d="M934 306h12M934 314h12"/>
+    <path d="M980 312c16 0 28 12 28 28s-12 28-28 28-28-12-28-28"/>
+  </g>
+
+  <g>
+    <path d="M338 155c130-42 258-58 376-40l118 18c14 2 24 15 22 30l-23 154c-2 14-15 24-29 22l-118-18c-118-18-236-3-352 38-15 6-32-4-34-20l-9-68c-2-16 8-31 23-36z" fill="#fffaf2" stroke="#5f574c" stroke-width="4"/>
+    <path d="M355 206h450M355 236h420M355 266h355" stroke="#b2a28f" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="770" cy="286" r="18" fill="#baa17e"/>
+    <path d="M762 286h16M770 278v16" stroke="#fffaf2" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <g stroke="#8d7d68" stroke-width="7" stroke-linecap="round" fill="none" opacity="0.9">
+    <path d="M280 440c70 34 126 42 190 26"/>
+    <path d="M525 430c78 34 138 42 198 26"/>
+    <path d="M770 448c84 28 138 28 200 12"/>
+  </g>
+</svg>
