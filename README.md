@@ -47,56 +47,28 @@ npm run preview
    - Inline image in article body: `![Alt text](/katsu-essays/images/example.jpg)`
 
 ## Deploy to GitHub Pages
-This project is configured for GitHub Pages static hosting with:
-- `output: 'static'`
-- `base: '/katsu-essays'`
+Expected production URL: `https://yiming0318.github.io/katsu-essays/`
 
-### Recommended workflow (GitHub Actions)
-1. Push this repo to GitHub.
-2. In **Settings → Pages**, set source to **GitHub Actions**.
-3. Add workflow `.github/workflows/deploy.yml`:
+This repository is configured for GitHub Pages static hosting with:
+- `site: "https://yiming0318.github.io"`
+- `base: "/katsu-essays/"`
+- `output: "static"`
 
-```yaml
-name: Deploy Astro to GitHub Pages
+### One-time setup in GitHub
+1. Push the repository to `Yiming0318/katsu-essays`.
+2. Go to **Settings → Pages**.
+3. Set **Source** to **GitHub Actions**.
 
-on:
-  push:
-    branches: [main]
-  workflow_dispatch:
+### Automated deployment
+A workflow is included at `.github/workflows/deploy.yml`.
+- On every push to `main`, it runs `npm ci` and `npm run build`.
+- It uploads the generated `dist/` folder as the Pages artifact.
+- It deploys via `actions/deploy-pages`.
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: npm
-      - run: npm ci
-      - run: npm run build
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: dist
-
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
+### Local verification before pushing
+```bash
+npm ci
+npm run build
 ```
 
-If your repository name is not `katsu-essays`, update `base` in `astro.config.mjs`.
+If your repository name changes, update `base` in `astro.config.mjs` to match the new repo path.

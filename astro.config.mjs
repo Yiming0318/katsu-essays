@@ -3,8 +3,8 @@ import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://your-username.github.io',
-  base: '/katsu-essays',
+  site: 'https://yiming0318.github.io',
+  base: '/katsu-essays/',
   output: 'static',
   integrations: [mdx(), sitemap()],
   markdown: {
