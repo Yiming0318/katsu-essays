@@ -1,0 +1,28 @@
+---
+const pathname = Astro.url.pathname;
+const links = [
+  { href: '/katsu-essays/', label: 'Home' },
+  { href: '/katsu-essays/essays', label: 'Essays' },
+  { href: '/katsu-essays/topics', label: 'Categories' },
+  { href: '/katsu-essays/about', label: 'About' }
+];
+
+const isActive = (href: string) => (href === '/katsu-essays/' ? pathname === href : pathname.startsWith(href));
+---
+
+<header class="site-header">
+  <div class="accent-line"></div>
+  <div class="site-container">
+    <nav>
+      <a class="brand-wrap" href="/katsu-essays/">
+        <span class="brand">Katsu Essays</span>
+        <span class="tag">Personal Essay Archive</span>
+      </a>
+      <div class="menu">
+        {links.map((link) => (
+          <a href={link.href} class:list={["menu-link", { active: isActive(link.href) }]}>{link.label}</a>
+        ))}
+      </div>
+    </nav>
+  </div>
+</header>

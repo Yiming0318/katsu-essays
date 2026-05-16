@@ -1,0 +1,17 @@
+---
+interface Props {
+  name: string;
+  description: string;
+  count: number;
+}
+const { name, description, count } = Astro.props;
+---
+
+<article class="category-card card">
+  <div>
+    <h3>{name}</h3>
+    <p>{description}</p>
+    <small>{count} essay{count === 1 ? '' : 's'}</small>
+  </div>
+  <span class="cta">View essays →</span>
+</article>

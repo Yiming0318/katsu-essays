@@ -1,48 +1,24 @@
 ---
-interface Props {
-  href: string;
-  title: string;
-  subtitle: string;
-  date: Date;
-  category: string;
-  image: string;
-  alt: string;
-  readingTime: string;
-  featured?: boolean;
-}
-
-const { href, title, subtitle, date, category, image, alt, readingTime, featured = false } = Astro.props;
+interface Props { href:string; title:string; subtitle:string; excerpt?:string; date:Date; category:string; image:string; alt:string; readingTime:string; featured?:boolean; }
+const { href, title, subtitle, excerpt, date, category, image, alt, readingTime, featured = false } = Astro.props;
 ---
-
 <article class:list={["essay-card", "card", { featured }]}>
   <a href={href}>
     <img src={image} alt={alt} loading="lazy" />
     <div class="content">
       <div class="category">{category}</div>
       <h3>{title}</h3>
-      <p>{subtitle}</p>
-      <div class="meta">{date.toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'})} · {readingTime}</div>
+      <p class="subtitle">{subtitle}</p>
+      {excerpt && <p class="excerpt">{excerpt}</p>}
+      <div class="meta">{date.toLocaleDateString('en-US', {year:'numeric', month:'long', day:'numeric'})} · {readingTime}</div>
     </div>
   </a>
 </article>
-
 <style>
-  .essay-card { overflow: hidden; }
-  .essay-card a { display: block; }
-  .essay-card img { width: 100%; height: 230px; object-fit: cover; border-bottom: 1px solid var(--border); }
-  .essay-card .content { padding: 1.1rem 1.2rem 1.2rem; }
-  .category { font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted-text); margin-bottom: 0.5rem; }
-  h3 { margin: 0 0 0.45rem; font-size: clamp(1.45rem, 2vw, 1.75rem); }
-  p { margin: 0 0 0.8rem; color: #4f4a43; font-size: 1.02rem; }
-  .meta { font-size: 0.9rem; color: var(--muted-text); }
-
-  .featured { border-color: color-mix(in srgb, var(--accent) 20%, var(--border)); box-shadow: 0 12px 30px rgba(15, 23, 32, 0.08); }
-  .featured img { height: 340px; }
-  .featured h3 { font-size: clamp(1.9rem, 3vw, 2.5rem); }
-  .featured p { font-size: 1.12rem; }
-
-  @media (max-width: 760px) {
-    .essay-card img { height: 210px; }
-    .featured img { height: 250px; }
-  }
+.essay-card{overflow:hidden;transition:transform .2s ease,border-color .2s ease}.essay-card:hover{transform:translateY(-2px);border-color:color-mix(in srgb,var(--accent) 32%,var(--border))}
+.essay-card a{display:block}.essay-card img{width:100%;aspect-ratio:16/10;object-fit:cover;border-bottom:1px solid var(--border)}.content{padding:1.1rem}
+.category{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted-text);margin-bottom:.5rem}.subtitle{color:#4c463f;margin-bottom:.5rem}.excerpt{font-style:italic;color:#564f47}
+h3{font-size:1.28rem;margin-bottom:.45rem}.meta{font-size:.87rem;color:var(--muted-text)}
+.featured a{display:grid;grid-template-columns:1.05fr 1fr}.featured img{height:100%;aspect-ratio:auto;border-right:1px solid var(--border);border-bottom:0}.featured .content{padding:1.8rem}.featured h3{font-size:2rem}
+@media (max-width: 860px){.featured a{grid-template-columns:1fr}.featured img{border-right:0;border-bottom:1px solid var(--border)}}
 </style>

@@ -1,0 +1,12 @@
+---
+interface Props {
+  narrow?: boolean;
+  className?: string;
+}
+
+const { narrow = false, className = '' } = Astro.props;
+---
+
+<div class:list={["site-container", { narrow }, className]}>
+  <slot />
+</div>

@@ -1,96 +1,33 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import EssayCard from '../components/EssayCard.astro';
+import Container from '../components/Container.astro';
 import { getCollection } from 'astro:content';
-
-const essays = (await getCollection('essays')).sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
-const featured = essays.find((essay) => essay.data.featured) ?? essays[0];
-const latest = essays.filter((essay) => essay.slug !== featured.slug).slice(0, 3);
-const categories = [
-  {
-    name: 'Markets & Investing',
-    description: 'Notes on bubbles, leverage, timing, and retail investor psychology.'
-  },
-  {
-    name: 'AI & Technology Cycles',
-    description: 'Essays on AI tools, model economics, hype cycles, and who ultimately pays the bill.'
-  },
-  {
-    name: 'Money & Human Nature',
-    description: 'Stories about wealth, incentives, patience, compounding, and how people think about money.'
-  }
-];
+const essays = (await getCollection('essays')).sort((a,b)=>b.data.pubDate.getTime()-a.data.pubDate.getTime());
+const featured = essays.find((e)=>e.data.featured) ?? essays[0];
+const latest = essays.filter((e)=>e.slug!==featured.slug).slice(0,2);
 ---
-
 <BaseLayout title="Home">
-  <section class="hero">
-    <p class="eyebrow">Personal Essay Archive</p>
-    <h1>Essays on Markets, AI, and the Psychology of Risk</h1>
-    <p class="lede">A personal archive of essays about investing, AI cycles, money, bubbles, and the strange ways humans make decisions under uncertainty.</p>
-  </section>
+  <Container>
+    <section class="hero section">
+      <div>
+        <p class="eyebrow">Personal Essay Archive</p><h1>Essays on Markets, AI, and the Psychology of Risk</h1>
+        <p class="lede">A personal archive of essays about investing, AI cycles, money, bubbles, and the strange ways humans make decisions under uncertainty.</p>
+        <div class="actions"><a class="button" href="/katsu-essays/essays">Read Latest Essays</a><a class="button ghost" href="/katsu-essays/about">About This Project</a></div>
+      </div>
+      <aside class="info card"><p>Notes on</p><ul><li>Markets</li><li>AI Cycles</li><li>Money</li><li>Risk</li><li>Human Behavior</li></ul></aside>
+    </section>
 
-  <section class="section-gap">
-    <h2>Featured</h2>
-    <EssayCard
-      featured
-      href={`/katsu-essays/essays/${featured.slug}/`}
-      title={featured.data.title}
-      subtitle={featured.data.subtitle}
-      date={featured.data.pubDate}
-      category={featured.data.category}
-      image={featured.data.coverImage}
-      alt={featured.data.coverAlt}
-      readingTime={featured.data.readingTime}
-    />
-  </section>
+    <section class="section"><h2>Featured Essay</h2>
+      <EssayCard featured href={`/katsu-essays/essays/${featured.slug}/`} title={featured.data.title} subtitle={featured.data.subtitle} excerpt="Most people ask whether the price is right. The better question is whether their own psychology can survive the trade." date={featured.data.pubDate} category={featured.data.category} image={featured.data.coverImage} alt={featured.data.coverAlt} readingTime={featured.data.readingTime} />
+    </section>
 
-  <section class="section-gap">
-    <h2>Latest</h2>
-    <div class="grid latest-grid">
-      {latest.map((essay) => (
-        <EssayCard
-          href={`/katsu-essays/essays/${essay.slug}/`}
-          title={essay.data.title}
-          subtitle={essay.data.subtitle}
-          date={essay.data.pubDate}
-          category={essay.data.category}
-          image={essay.data.coverImage}
-          alt={essay.data.coverAlt}
-          readingTime={essay.data.readingTime}
-        />
-      ))}
-    </div>
-  </section>
-
-  <section>
-    <h2>Categories</h2>
-    <div class="grid topic-grid">
-      {categories.map((category) => (
-        <div class="card topic-card">
-          <h3>{category.name}</h3>
-          <p>{category.description}</p>
-        </div>
-      ))}
-    </div>
-  </section>
+    <section class="section"><h2>Latest Essays</h2><div class="grid latest-grid">{latest.map((essay)=><EssayCard href={`/katsu-essays/essays/${essay.slug}/`} title={essay.data.title} subtitle={essay.data.subtitle} date={essay.data.pubDate} category={essay.data.category} image={essay.data.coverImage} alt={essay.data.coverAlt} readingTime={essay.data.readingTime} />)}</div></section>
+  </Container>
 </BaseLayout>
-
 <style>
-  .hero { margin-bottom: 5rem; padding-top: 0.6rem; }
-  .eyebrow { text-transform: uppercase; letter-spacing: 0.11em; color: var(--muted-text); font-size: 0.82rem; margin-bottom: 0.9rem; }
-  h1 { max-width: 12ch; font-size: clamp(2.8rem, 7vw, 5.3rem); margin-bottom: 1.2rem; }
-  .lede { max-width: 56ch; color: #47423c; font-size: 1.15rem; }
-  .section-gap { margin-bottom: 3.2rem; }
-  .latest-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .topic-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
-  .topic-card { padding: 1.4rem; color: #47423c; }
-  .topic-card h3 { font-size: 1.05rem; margin-bottom: 0.45rem; }
-  .topic-card p { margin: 0; color: var(--muted-text); font-size: 0.95rem; line-height: 1.6; }
-
-  @media (max-width: 980px) { .latest-grid { grid-template-columns: 1fr 1fr; } }
-  @media (max-width: 760px) {
-    .hero { margin-bottom: 3rem; }
-    h1 { max-width: 100%; }
-    .latest-grid { grid-template-columns: 1fr; }
-  }
+.hero{display:grid;grid-template-columns:1.5fr 1fr;gap:1.2rem;align-items:stretch}.eyebrow{text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;color:var(--muted-text)}h1{font-size:clamp(2rem,4vw,3.3rem);margin:.5rem 0 1rem}.lede{color:#49443e;max-width:52ch}
+.actions{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.3rem}.button{border:1px solid var(--border);padding:.58rem .9rem;border-radius:999px;font-size:.9rem;background:#f4f0e9}.button.ghost{background:transparent}
+.info{padding:1.2rem}.info p{font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted-text)}.info ul{padding-left:1rem;margin:.3rem 0 0}.info li{margin:.3rem 0}
+.latest-grid{grid-template-columns:repeat(2,minmax(0,1fr))}@media (max-width:900px){.hero{grid-template-columns:1fr}.latest-grid{grid-template-columns:1fr}}
 </style>
