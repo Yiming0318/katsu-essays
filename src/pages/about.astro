@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Container from '../components/Container.astro';
+import { assetPath } from '../utils/paths';
 ---
 <BaseLayout title="About"><Container narrow>
 <article class="section about"><h1>About</h1>
@@ -9,7 +10,7 @@ import Container from '../components/Container.astro';
 <section><h2>What I write about</h2><p>I write short editorial essays about decisions: timing, incentives, compounding, and the mental models people use when uncertainty gets uncomfortable.</p></section>
 <section><h2>Original Chinese essays</h2><p>The Chinese originals are published through WeChat as katsu韭菜树洞.</p></section>
 <section><h2>Disclaimer</h2><p>These notes are personal reflections, not investment advice.</p></section>
-<section class="qr card"><div><h2>WeChat Archive</h2><p>Scan for original Chinese essays and updates.</p></div><img src="/katsu-essays/images/qrcode.jpg" alt="QR code for 微信公众号 katsu韭菜树洞" loading="lazy" /></section>
+<section class="qr card"><div><h2>WeChat Archive</h2><p>Scan for original Chinese essays and updates.</p></div><img src={assetPath("/images/qrcode.jpg")} alt="QR code for 微信公众号 katsu韭菜树洞" loading="lazy" /></section>
 </article>
 </Container></BaseLayout>
 <style>.about h1{margin-bottom:1rem}.about section{margin-top:2rem}.about section p{color:#4e4942}.qr{padding:1rem;display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:1rem}.qr img{width:100%;max-width:220px;justify-self:end;border:1px solid var(--border);border-radius:12px}@media (max-width:760px){.qr{grid-template-columns:1fr}.qr img{justify-self:start}}</style>

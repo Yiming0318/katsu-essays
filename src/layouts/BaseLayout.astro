@@ -1,6 +1,7 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { withBase } from '../utils/paths';
 interface Props { title: string; description?: string; }
 const { title, description = 'A personal archive of essays about investing, AI cycles, money, bubbles, and the strange ways humans make decisions under uncertainty.' } = Astro.props;
 ---
@@ -10,7 +11,7 @@ const { title, description = 'A personal archive of essays about investing, AI c
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
-    <link rel="icon" type="image/svg+xml" href="/katsu-essays/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href={withBase("favicon.svg")} />
     <title>{title} · Katsu Essays</title>
     <style is:global>
       :root { --background:#f8f6f1; --text:#1f1d1b; --muted-text:#6c665f; --border:#dcd6cd; --card-background:#fdfcf8; --accent:#8b6c4f; }

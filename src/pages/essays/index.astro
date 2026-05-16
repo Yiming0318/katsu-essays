@@ -3,12 +3,13 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import EssayCard from '../../components/EssayCard.astro';
 import Container from '../../components/Container.astro';
 import { getCollection } from 'astro:content';
+import { withBase } from '../../utils/paths';
 const essays=(await getCollection('essays')).sort((a,b)=>b.data.pubDate.getTime()-a.data.pubDate.getTime());
 const filters=['All','Markets & Investing','AI & Technology Cycles','Money & Human Nature'];
 ---
 <BaseLayout title="Essays"><Container>
 <section class="section intro"><h1>Essays</h1><p>Browse essays by topic, from investing psychology to AI cycles and money philosophy.</p></section>
 <section class="pills">{filters.map((f)=><span class:list={['pill',{active:f==='All'}]}>{f}</span>)}</section>
-<section class="section"><div class="grid cards-grid">{essays.map((essay)=><EssayCard href={`/katsu-essays/essays/${essay.slug}/`} title={essay.data.title} subtitle={essay.data.subtitle} date={essay.data.pubDate} category={essay.data.category} image={essay.data.coverImage} alt={essay.data.coverAlt} readingTime={essay.data.readingTime} />)}</div></section>
+<section class="section"><div class="grid cards-grid">{essays.map((essay)=><EssayCard href={`${withBase('/essays')}/${essay.slug}/`} title={essay.data.title} subtitle={essay.data.subtitle} date={essay.data.pubDate} category={essay.data.category} image={essay.data.coverImage} alt={essay.data.coverAlt} readingTime={essay.data.readingTime} />)}</div></section>
 </Container></BaseLayout>
 <style>.intro p{color:#4e4841}.pills{display:flex;gap:.55rem;flex-wrap:wrap}.pill{border:1px solid var(--border);padding:.4rem .8rem;border-radius:999px;font-size:.85rem;color:var(--muted-text)}.pill.active{color:var(--text);background:#f2ede5}.cards-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin-top:.4rem}@media (max-width:760px){.cards-grid{grid-template-columns:1fr}}</style>
