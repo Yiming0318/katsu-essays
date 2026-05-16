@@ -2,10 +2,27 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 <BaseLayout title="About">
-  <article style="max-width:760px">
+  <article class="reading-width about">
     <h1>About</h1>
     <p>Katsu Essays is a personal archive of essays first drafted in Chinese and adapted into English for wider conversations.</p>
+    <p>The Chinese original version is published under 微信公众号：katsu韭菜树洞.</p>
+
+    <section class="qr-section card">
+      <h2>WeChat Official Account</h2>
+      <p>The image below is the QR code for 微信公众号：katsu韭菜树洞.</p>
+      <img src="/katsu-essays/images/wechat-qr.svg" alt="QR code for 微信公众号 katsu韭菜树洞" loading="lazy" />
+    </section>
+
     <p>The focus is on markets, AI infrastructure, and money philosophy—three areas where incentives, psychology, and long-term thinking collide.</p>
     <p>Expect reflective writing, practical frameworks, and occasional disagreement with consensus narratives.</p>
   </article>
 </BaseLayout>
+
+<style>
+  .about h1 { font-size: clamp(2.2rem, 4.4vw, 3.4rem); margin-bottom: 1rem; }
+  .about p { color: #1d1d1f; }
+  .qr-section { margin: 1.8rem 0 2rem; padding: 1.1rem; }
+  .qr-section h2 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+  .qr-section p { color: var(--muted-text); }
+  .qr-section img { width: min(320px, 100%); border-radius: 12px; border: 1px solid var(--border); }
+</style>

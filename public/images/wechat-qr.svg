@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <rect width="512" height="512" fill="#fff"/>
+  <rect x="16" y="16" width="480" height="480" fill="none" stroke="#000" stroke-width="12"/>
+  <text x="256" y="236" text-anchor="middle" font-size="24" font-family="Arial, sans-serif" fill="#111">QR code placeholder</text>
+  <text x="256" y="272" text-anchor="middle" font-size="18" font-family="Arial, sans-serif" fill="#555">Replace with provided image</text>
+</svg>
