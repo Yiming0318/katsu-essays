@@ -1,10 +1,10 @@
 # Katsu Essays
 
-Minimalist editorial essay archive built with Astro.
+Premium, minimalist editorial essay archive built with Astro.
 
 ## Site identity
 - **Name:** Katsu Essays
-- **Tagline:** Markets, AI infrastructure, and the psychology of risk.
+- **Tagline:** Essays on Markets, AI, and the Psychology of Risk
 
 ## Getting started
 
@@ -32,7 +32,7 @@ npm run preview
    - `subtitle`
    - `description`
    - `pubDate` (YYYY-MM-DD)
-   - `category` (`Markets`, `AI & Infrastructure`, `Money Philosophy`)
+   - `category` (`Markets & Investing`, `AI & Technology Cycles`, `Money & Human Nature`)
    - `readingTime` (e.g. `6 min read`)
    - `featured` (`true` or `false`)
    - `coverImage` (e.g. `/katsu-essays/images/your-cover.svg`)

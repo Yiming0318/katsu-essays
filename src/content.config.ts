@@ -7,7 +7,7 @@ const essays = defineCollection({
     subtitle: z.string(),
     description: z.string(),
     pubDate: z.coerce.date(),
-    category: z.enum(['Markets', 'AI & Infrastructure', 'Money Philosophy']),
+    category: z.enum(['Markets & Investing', 'AI & Technology Cycles', 'Money & Human Nature']),
     readingTime: z.string(),
     featured: z.boolean().default(false),
     coverImage: z.string(),
