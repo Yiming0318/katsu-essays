@@ -12,14 +12,24 @@ const { Content } = await render(essay);
 ---
 
 <BaseLayout title={essay.data.title} description={essay.data.description}>
-  <article style="max-width:760px;margin:0 auto">
-    <img src={essay.data.coverImage} alt={essay.data.coverAlt} style="width:100%;border-radius:14px;margin-bottom:1.5rem" />
-    <div style="text-transform:uppercase;letter-spacing:.08em;color:#6b7280;font-size:.82rem">{essay.data.category}</div>
-    <h1 style="font-size:2.7rem;margin:.3rem 0">{essay.data.title}</h1>
-    <p style="font-size:1.2rem;color:#555;margin:0 0 1rem">{essay.data.subtitle}</p>
-    <div style="font-size:.95rem;color:#777;margin-bottom:2rem">{essay.data.pubDate.toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'})} · {essay.data.readingTime}</div>
+  <article class="reading-width">
+    <img src={essay.data.coverImage} alt={essay.data.coverAlt} class="cover" />
+    <div class="category">{essay.data.category}</div>
+    <h1>{essay.data.title}</h1>
+    <p class="subtitle">{essay.data.subtitle}</p>
+    <div class="meta">{essay.data.pubDate.toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'})} · {essay.data.readingTime}</div>
     <Content />
-    <hr style="border:none;border-top:1px solid #e9e7e4;margin:2.5rem 0 1.2rem" />
-    <p style="font-size:.95rem;color:#666">These essays are personal reflections, not investment advice.</p>
+    <hr />
+    <p class="note">These essays are personal reflections, not investment advice.</p>
   </article>
 </BaseLayout>
+
+<style>
+  .cover { width: 100%; border-radius: 18px; margin: 0 0 1.7rem; }
+  .category { text-transform: uppercase; letter-spacing: 0.11em; color: var(--muted-text); font-size: 0.78rem; margin-bottom: 0.6rem; }
+  h1 { font-size: clamp(2.4rem, 5.6vw, 4rem); margin-bottom: 0.65rem; }
+  .subtitle { font-size: clamp(1.2rem, 2.4vw, 1.45rem); color: #5b554d; margin-bottom: 1rem; }
+  .meta { font-size: 0.95rem; color: var(--muted-text); margin-bottom: 2.1rem; }
+  hr { border: none; border-top: 1px solid var(--border); margin: 2.7rem 0 1.1rem; }
+  .note { font-size: 0.95rem; color: var(--muted-text); }
+</style>

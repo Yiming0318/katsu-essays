@@ -4,22 +4,62 @@ import EssayCard from '../../components/EssayCard.astro';
 import { getCollection } from 'astro:content';
 
 const essays = (await getCollection('essays')).sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+const categories = [...new Set(essays.map((essay) => essay.data.category))];
 ---
 <BaseLayout title="Essays">
-  <h1>Essays</h1>
-  <p style="max-width:70ch;color:#555">An archive of translated essays from Chinese originals.</p>
-  <div class="grid latest">
-    {essays.map((essay) => (
-      <EssayCard
-        href={`/katsu-essays/essays/${essay.slug}/`}
-        title={essay.data.title}
-        subtitle={essay.data.subtitle}
-        date={essay.data.pubDate}
-        category={essay.data.category}
-        image={essay.data.coverImage}
-        alt={essay.data.coverAlt}
-        readingTime={essay.data.readingTime}
-      />
+  <section class="intro">
+    <h1>Essays</h1>
+    <p>An archive of translated essays from Chinese originals.</p>
+  </section>
+
+  <section class="filters">
+    {categories.map((category) => (
+      <a href={`#${category.toLowerCase().replaceAll(' ', '-')}`} class="filter-card card">
+        <span>{category}</span>
+        <small>{essays.filter((essay) => essay.data.category === category).length} essays</small>
+      </a>
     ))}
-  </div>
+  </section>
+
+  {categories.map((category) => (
+    <section id={category.toLowerCase().replaceAll(' ', '-')} class="category-section">
+      <h2>{category}</h2>
+      <div class="grid cards-grid">
+        {essays
+          .filter((essay) => essay.data.category === category)
+          .map((essay) => (
+            <EssayCard
+              href={`/katsu-essays/essays/${essay.slug}/`}
+              title={essay.data.title}
+              subtitle={essay.data.subtitle}
+              date={essay.data.pubDate}
+              category={essay.data.category}
+              image={essay.data.coverImage}
+              alt={essay.data.coverAlt}
+              readingTime={essay.data.readingTime}
+            />
+          ))}
+      </div>
+    </section>
+  ))}
 </BaseLayout>
+
+<style>
+  .intro { margin-bottom: 1.8rem; }
+  h1 { font-size: clamp(2.3rem, 4vw, 3.3rem); margin-bottom: 0.5rem; }
+  .intro p { color: #504b44; }
+  .filters {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    margin: 0 0 2.4rem;
+  }
+  .filter-card { padding: 0.95rem 1rem; display: block; }
+  .filter-card span { display: block; font-size: 1.03rem; margin-bottom: 0.2rem; }
+  .filter-card small { color: var(--muted-text); }
+  .category-section { margin-bottom: 2.8rem; scroll-margin-top: 90px; }
+  .cards-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+  @media (max-width: 980px) { .cards-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 760px) { .cards-grid { grid-template-columns: 1fr; } }
+</style>
