@@ -1,0 +1,11 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 675'>
+<rect width='1200' height='675' fill='#f4efe6'/>
+<rect x='490' y='80' width='220' height='130' rx='18' fill='#d5cabd' stroke='#5e5348'/>
+<circle cx='560' cy='145' r='18' fill='#b7aa9a'/><circle cx='640' cy='145' r='18' fill='#b7aa9a'/>
+<rect x='120' y='360' width='220' height='170' rx='16' fill='#ddd2c5' stroke='#5e5348'/>
+<rect x='390' y='360' width='220' height='170' rx='16' fill='#ddd2c5' stroke='#5e5348'/>
+<rect x='660' y='360' width='220' height='170' rx='16' fill='#ddd2c5' stroke='#5e5348'/>
+<rect x='930' y='360' width='150' height='170' rx='16' fill='#ddd2c5' stroke='#5e5348'/>
+<path d='M600 210v60M230 360v-45h740v45M500 315v45M770 315v45M1005 315v45' stroke='#6a5f52' stroke-width='14' fill='none' stroke-linecap='round'/>
+<circle cx='230' cy='450' r='30' fill='#c6d4cd'/><circle cx='500' cy='450' r='30' fill='#c6d4cd'/><circle cx='770' cy='450' r='30' fill='#c6d4cd'/><circle cx='1005' cy='450' r='30' fill='#c6d4cd'/>
+</svg>

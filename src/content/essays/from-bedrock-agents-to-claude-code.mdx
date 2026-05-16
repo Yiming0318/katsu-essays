@@ -1,0 +1,323 @@
+---
+title: "From Bedrock Agents to Claude Code"
+subtitle: "Some doubts about AI tool moats in a world where every agent can call tools."
+category: "AI & Technology Cycles"
+pubDate: 2026-05-08
+slug: "from-bedrock-agents-to-claude-code"
+readingTime: "9 min read"
+description: "A personal reflection on agent tools, MCP, coding workflows, community, and why AI tool moats may be less stable than traditional software moats."
+featured: false
+coverImage: "/images/ai-tool-moats/cover.svg"
+coverAlt: "An old rigid agent stack transitioning into a faster modern coding-agent workflow."
+---
+
+import ImageFigure from '../../components/ImageFigure.astro';
+
+# From Bedrock Agents to Claude Code
+
+At the beginning of last year, I genuinely thought it was exciting to use AWS’s prebuilt Bedrock Agent to call different Lambda functions as tools and complete an entire agent workflow.
+
+That excitement was real.
+
+Even if the system felt heavy, and even if many parts were not yet smooth, the direction seemed obvious:
+
+Models would call tools.  
+Models would execute tasks.  
+Models would slowly become agents that could actually do work.
+
+Standing in early 2025, that already felt futuristic enough.
+
+Then, only a few months later, the whole industry seemed to step on the accelerator.
+
+OpenAI released Codex.  
+Anthropic released Claude Code.  
+Amazon also had its own internal agents, such as AKI and Kiro.
+
+Everyone started talking about MCP, coding agents, and end-to-end workflows.
+
+Looking back, the system that had felt so advanced to me only a short time ago suddenly looked like a previous-generation product.
+
+The more awkward part was that Bedrock Agent did not even support MCP at the time, and there was no especially clear timeline in the roadmap.
+
+When other agent products were already evolving rapidly around MCP, it had clearly started to fall behind.
+
+By the second quarter of 2026, Amazon finally allowed employees to use Claude Code and Codex.
+
+For many people, the first reaction was not only:
+
+“Great, we finally have access to more advanced tools.”
+
+It was also a strange kind of relief:
+
+Finally, we could use the tools that the rest of the industry was already using — and already admitting were genuinely good.
+
+At the same time, internal products like Kiro almost became abandoned overnight.
+
+Not because they were completely useless.
+
+But because people suddenly no longer wanted to wait inside a small closed ecosystem while the outside world was moving faster.
+
+This made me think about a more fundamental question:
+
+> If everyone can connect tools, access data, and build agents, where exactly is the moat for AI tools?
+
+That is the part I still find confusing.
+
+<ImageFigure src="/images/ai-tool-moats/cover.svg" alt="An old rigid agent stack compared with a faster modern coding agent workflow." caption="The generation shift felt abrupt: what once felt futuristic can quickly look legacy." />
+
+---
+
+## Everything seems to be converging
+
+On the surface, many things are converging.
+
+Protocols are converging.  
+Tool access is converging.  
+Everyone is talking about MCP.  
+Many agents can access internal data, run commands, read repositories, and call tools.
+
+If you only look at feature lists, it is easy to feel that everything is becoming similar.
+
+One product has one more button.  
+Another product supports one more server.  
+One tool has a slightly different workflow.  
+Another integrates with a different environment.
+
+But the real experience does not feel the same at all.
+
+The gap in user experience can still widen dramatically in just a few months.
+
+I started with Cline, a VS Code plugin for coding.  
+Then I used AKI, a ChatGPT-like UI tool for writing code.  
+Then I used Kiro CLI directly inside the terminal.  
+More recently, I started using MeshClaw, Amazon’s internal OpenClaw-like tool, to write code directly through Slack messages.
+
+Now, when I look back at many of the tools I used before, it is obvious that they do not feel like products from the same era.
+
+So the question becomes even more interesting:
+
+If interfaces and capabilities are converging, where does the difference actually come from?
+
+<ImageFigure src="/images/ai-tool-moats/old-agent-stack.svg" alt="A bulky model-to-Lambda tool system with rigid connections and mechanical pipes." caption="A rigid stack can work, yet still feel slow compared with newer agent-native workflows." />
+
+---
+
+## MCP is important, but MCP is not a moat
+
+The more I think about it, the more I feel that at least one thing is clear:
+
+MCP is important.
+
+But MCP is not a moat.
+
+It is more like a standardized interface.
+
+It solves the problem of how to connect tools, data, and context. It makes many one-off integrations easier to reuse and easier to scale.
+
+But a standardized interface is more like a road than a castle wall.
+
+It helps everyone move forward more easily.
+
+It does not automatically decide who runs the fastest.
+
+In other words, MCP lowers the integration barrier.
+
+It does not erase the product-experience gap.
+
+What truly determines the user experience is the layer above it:
+
+How does the model understand the task?  
+How does it break the task into steps?  
+When does it call tools?  
+How does it recover after failure?  
+How is context managed?  
+Does the default workflow feel smooth?  
+Are product details helping the user, or constantly getting in the way?
+
+So I increasingly feel that the real difference between AI tools is often not whether a feature exists.
+
+It is whether the product can combine all these visible, copyable capabilities into a system that actually feels natural to use.
+
+<ImageFigure src="/images/ai-tool-moats/mcp-as-road.svg" alt="A shared road used by many agents, showing that MCP is infrastructure rather than a wall." caption="Shared protocol infrastructure helps everyone; product execution still defines the experience." />
+
+---
+
+## The workflow itself is changing
+
+The last time I seriously opened IntelliJ to write code may have been more than a year ago.
+
+The last time I seriously opened VS Code to write code may have been four or five months ago.
+
+These days, a lot of the time, I am working through a terminal and a Slack conversation, asking an agent to write code, modify code, and complete tasks.
+
+If someone had told me a year ago that I might barely open an IDE in the future, I probably would have thought they were crazy.
+
+But looking back now, the real change is not simply that one tool became stronger than another tool.
+
+The way we operate “coding” itself is changing.
+
+Before, people assumed that coding meant sitting inside IntelliJ or VS Code — searching, jumping between files, editing, running, and debugging.
+
+AI was at most a copilot.
+
+It could complete a few lines, write some boilerplate, or explain a piece of code.
+
+Now, more and more often, coding feels like driving an agent.
+
+You give it a goal.  
+You provide context.  
+You give permission.  
+You watch it execute.  
+You correct it along the way.  
+You review the result at the end.
+
+The IDE still exists.
+
+But it increasingly feels like a graphical interface you open when necessary, not the absolute center of the workflow.
+
+The real battlefield is slowly becoming the terminal, CLI, chat interface, PR review, and the full agent loop.
+
+So the competition among AI tools may not simply be about who has the better IDE plugin.
+
+It may be about who understands and occupies this new workflow first.
+
+<ImageFigure src="/images/ai-tool-moats/workflow-shift.svg" alt="Terminal, chat, PR review, and agent loop becoming the center of coding while the IDE fades into the background." caption="Coding is shifting from IDE-first habits to multi-surface agent loops." />
+
+---
+
+## The word “moat” starts to feel awkward
+
+When I think about AI tools through the old software moat framework, the word itself starts to feel awkward.
+
+Traditionally, when we talked about software moats, we often meant things like data barriers, switching costs, and ecosystem lock-in.
+
+AI tools may have some of these.
+
+But they do not fit cleanly.
+
+Is the moat the model?
+
+Partly, maybe.
+
+A stronger foundation model can absolutely bring stronger agent capabilities, better task understanding, and more stable execution.
+
+But model gaps are not necessarily permanent.
+
+And as the relationships between model companies and cloud platforms evolve, more cloud providers and AI tools may get access to similar top-tier models.
+
+Is the moat tool integration?
+
+It may have looked that way before.
+
+But once MCP becomes widely adopted, that barrier becomes less stable.
+
+Interfaces become standardized.  
+Everyone can connect tools.  
+Sooner or later, everyone will connect them.
+
+Is the moat the product?
+
+This answer feels closer.
+
+The question is not only “can this be built?”
+
+It is:
+
+What is the default way of doing the task?  
+How smooth is the workflow?  
+Do the features combine into a machine that actually works?
+
+But even saying “product” still feels incomplete.
+
+Because there is another thing that is often underestimated:
+
+Community.
+
+---
+
+## Community is part of the product
+
+In the past, I used to think community was mostly hype.
+
+A tool was popular, so more people talked about it.
+
+That was it.
+
+But over time, I have started to think differently.
+
+For developer tools, community itself is part of productivity.
+
+When your friends, coworkers, online tutorials, best practices, debugging stories, and workflow examples all form around the same tool, the tool is no longer just software.
+
+It becomes a shared language.
+
+You mention a command, and other people understand.  
+You describe a workflow, and other people have tried it.  
+You hit a bug, and someone online has probably already hit it before.
+
+At that point, the value of the tool is not only its own feature set.
+
+It is the thickness of the knowledge network behind it.
+
+The opposite is also true.
+
+If you stay inside a small closed ecosystem and keep using an agent that mostly only your own company insists on using, the loss is not only a slightly worse product experience.
+
+You may also lose access to the external knowledge network.
+
+The rest of the industry is discussing a new way of working, while you are still optimizing around an internal system.
+
+Over time, not only productivity but also judgment can become stale.
+
+<ImageFigure src="/images/ai-tool-moats/community-network.svg" alt="A developer knowledge network around shared commands, workflows, tutorials, and debugging experience." caption="Community turns tools into shared workflows, not just isolated features." />
+
+---
+
+## Maybe the moat is a moving lead
+
+I now prefer to understand AI agent moats as a combined advantage:
+
+Model capability.  
+Product polish.  
+Default workflow.  
+Feedback loops.  
+Fast iteration.  
+Community language.
+
+When these things stack together, they create an overall experience that is hard for others to fully copy in a short time.
+
+That advantage exists.
+
+But it does not feel like a traditional moat.
+
+It is not that stable.  
+It is not that thick.  
+It is not easy to package into a ten-year business story.
+
+It feels more like an advantage in a high-speed flow.
+
+You have to keep iterating.  
+You have to keep absorbing the external ecosystem.  
+You have to keep moving with the new workflow.
+
+Only then can you barely maintain the lead.
+
+The moment you stop, the advantage begins to decay.
+
+The moment you close yourself off, the product begins to age.
+
+The moment you believe you already have a moat, the outside world may already be moving toward the next workflow.
+
+Maybe that is what confuses me most about AI tools.
+
+They are clearly valuable.
+
+Some of them are extremely valuable.
+
+But as more and more capabilities become standardized, it is no longer obvious what deserves to be called a moat.
+
+Maybe the moat of an AI tool is not a deep wall.
+
+Maybe it is a lead you can only keep by constantly running.
+
+<ImageFigure src="/images/ai-tool-moats/running-moat.svg" alt="A moving race path where an AI tool must keep running to maintain its lead." caption="In fast cycles, advantage behaves less like a wall and more like a pace you must sustain." />

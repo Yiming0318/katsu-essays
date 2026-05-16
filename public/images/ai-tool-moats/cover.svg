@@ -1,0 +1,14 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 675'>
+<rect width='1200' height='675' fill='#f4efe6'/>
+<rect x='70' y='120' width='480' height='420' rx='24' fill='#e3dbcf' stroke='#8a7d6d'/>
+<rect x='135' y='190' width='120' height='90' rx='10' fill='#c9beb1' stroke='#5f5448'/><rect x='305' y='190' width='120' height='90' rx='10' fill='#c9beb1' stroke='#5f5448'/>
+<rect x='220' y='345' width='180' height='110' rx='12' fill='#d2c8bb' stroke='#5f5448'/>
+<path d='M255 235h45v45M425 235h-45v45M310 345v-65M345 345v-65' stroke='#5f5448' stroke-width='8' fill='none'/>
+<path d='M565 335 C645 295,690 295,760 335' stroke='#8d7f6f' stroke-width='18' fill='none' stroke-linecap='round'/>
+<circle cx='760' cy='335' r='16' fill='#7c9a8d'/>
+<rect x='700' y='90' width='430' height='500' rx='28' fill='#e9e2d8' stroke='#7f7365'/>
+<rect x='760' y='160' width='300' height='80' rx='12' fill='#d7ccc0'/>
+<rect x='760' y='270' width='130' height='100' rx='14' fill='#c4b7a8'/><rect x='930' y='270' width='130' height='100' rx='14' fill='#c4b7a8'/>
+<rect x='760' y='400' width='300' height='120' rx='14' fill='#b8ccc4'/>
+<path d='M790 210h240M790 300h70M960 300h70M790 430h240' stroke='#4f463d' stroke-width='6' opacity='.7'/>
+</svg>
