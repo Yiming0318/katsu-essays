@@ -5,7 +5,7 @@ import Container from '../components/Container.astro';
 import { withBase } from '../utils/paths';
 import { getCollection } from 'astro:content';
 
-const essays = (await getCollection('essays')).sort((a,b)=>b.data.pubDate.getTime()-a.data.pubDate.getTime());
+const essays = (await getCollection('essays', ({ data }) => !data.draft)).sort((a,b)=>b.data.pubDate.getTime()-a.data.pubDate.getTime());
 const featured = essays.find((e)=>e.data.featured) ?? essays[0];
 const latest = essays.filter((e)=>e.slug!==featured.slug).slice(0,2);
 ---

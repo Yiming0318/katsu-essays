@@ -4,7 +4,7 @@ import EssayCard from '../../components/EssayCard.astro';
 import Container from '../../components/Container.astro';
 import { getCollection } from 'astro:content';
 import { withBase } from '../../utils/paths';
-const essays=(await getCollection('essays')).sort((a,b)=>b.data.pubDate.getTime()-a.data.pubDate.getTime());
+const essays=(await getCollection('essays', ({ data }) => !data.draft)).sort((a,b)=>b.data.pubDate.getTime()-a.data.pubDate.getTime());
 const filters=[
   {label:'All',id:'all-essays'},
   {label:'Markets & Investing',id:'markets-investing'},

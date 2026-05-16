@@ -10,6 +10,7 @@ const essays = defineCollection({
     category: z.enum(['Markets & Investing', 'AI & Technology Cycles', 'Money & Human Nature']),
     readingTime: z.string(),
     featured: z.boolean().default(false),
+    draft: z.boolean().default(false),
     coverImage: z.string(),
     coverAlt: z.string()
   })
