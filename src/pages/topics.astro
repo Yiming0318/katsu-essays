@@ -1,11 +1,14 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import CategoryCard from '../components/CategoryCard.astro';
+import Container from '../components/Container.astro';
+import { getCollection } from 'astro:content';
+const essays=await getCollection('essays');
+const categories=[
+{name:'Markets & Investing',description:'Notes on bubbles, leverage, timing, and retail investor psychology.'},
+{name:'AI & Technology Cycles',description:'Essays on AI tools, model economics, hype cycles, and who ultimately pays the bill.'},
+{name:'Money & Human Nature',description:'Stories about wealth, incentives, patience, compounding, and how people think about money.'}
+];
 ---
-<BaseLayout title="Categories">
-  <h1>Categories</h1>
-  <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin-top:1.2rem">
-    <section class="card"><h2>Markets & Investing</h2><p>Notes on bubbles, leverage, timing, and retail investor psychology.</p></section>
-    <section class="card"><h2>AI & Technology Cycles</h2><p>Essays on AI tools, model economics, hype cycles, and who ultimately pays the bill.</p></section>
-    <section class="card"><h2>Money & Human Nature</h2><p>Stories about wealth, incentives, patience, compounding, and how people think about money.</p></section>
-  </div>
-</BaseLayout>
+<BaseLayout title="Categories"><Container><section class="section"><h1>Categories</h1><p class="sub">Explore themes across the archive.</p><div class="grid list">{categories.map((category)=><CategoryCard name={category.name} description={category.description} count={essays.filter((essay)=>essay.data.category===category.name).length} />)}</div></section></Container></BaseLayout>
+<style>.sub{color:var(--muted-text)}.list{margin-top:1rem;gap:.9rem}.category-card{padding:1.2rem;display:flex;justify-content:space-between;align-items:flex-end;gap:1rem}.category-card h3{margin-bottom:.5rem}.category-card p{margin:0 0 .5rem;color:#4f4a44}.category-card small,.cta{color:var(--muted-text);font-size:.88rem}</style>
