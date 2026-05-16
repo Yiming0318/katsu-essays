@@ -28,8 +28,8 @@ const latest = essays.filter((e)=>e.slug!==featured.slug).slice(0,2);
   </Container>
 </BaseLayout>
 <style>
-.hero{display:grid;grid-template-columns:1.5fr 1fr;gap:1.2rem;align-items:stretch}.eyebrow{text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;color:var(--muted-text)}h1{font-size:clamp(2rem,4vw,3.3rem);margin:.5rem 0 1rem}.lede{color:#49443e;max-width:52ch}
+.hero{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(280px,1fr);gap:1.7rem;align-items:stretch}.eyebrow{text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;color:var(--muted-text)}h1{font-size:clamp(2rem,4vw,3.3rem);margin:.6rem 0 1rem}.lede{color:#49443e;max-width:56ch}
 .actions{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.3rem}.button{border:1px solid var(--border);padding:.58rem .9rem;border-radius:999px;font-size:.9rem;background:#f4f0e9}.button.ghost{background:transparent}
-.info{padding:1.2rem}.info p{font-size:.72rem;text-transform:uppercase;letter-spacing:.15em;color:var(--muted-text);margin-bottom:.55rem}.info ul{list-style:none;padding:0;margin:.3rem 0 0}.info li{padding:.42rem 0;border-top:1px solid var(--border);font-size:.95rem;color:#47423b}
+.info{padding:1.35rem 1.4rem}.info p{font-size:.72rem;text-transform:uppercase;letter-spacing:.15em;color:var(--muted-text);margin-bottom:.55rem}.info ul{list-style:none;padding:0;margin:.3rem 0 0;display:grid;gap:.42rem}.info li{padding:.12rem 0;font-size:.95rem;color:#47423b;border-top:0}
 .latest-grid{grid-template-columns:repeat(2,minmax(0,1fr))}@media (max-width:900px){.hero{grid-template-columns:1fr}.latest-grid{grid-template-columns:1fr}}
 </style>
