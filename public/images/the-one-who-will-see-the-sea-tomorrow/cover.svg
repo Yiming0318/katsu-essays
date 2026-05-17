@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" fill="none">
+  <rect width="1600" height="900" fill="#1E232A"/>
+  <rect x="210" y="130" width="1180" height="640" rx="10" fill="#252C34" stroke="#424A52"/>
+  <rect x="260" y="180" width="1080" height="540" fill="#313B46"/>
+  <line x1="350" y1="180" x2="260" y2="720" stroke="#AAB5BE" stroke-opacity="0.28" stroke-width="3"/>
+  <line x1="430" y1="180" x2="340" y2="720" stroke="#AAB5BE" stroke-opacity="0.22" stroke-width="2"/>
+  <line x1="520" y1="180" x2="430" y2="720" stroke="#AAB5BE" stroke-opacity="0.18" stroke-width="2"/>
+  <line x1="610" y1="180" x2="520" y2="720" stroke="#AAB5BE" stroke-opacity="0.2" stroke-width="2"/>
+  <ellipse cx="1000" cy="605" rx="112" ry="24" fill="#14181D" fill-opacity="0.7"/>
+  <path d="M940 432C940 390 974 356 1016 356V356C1058 356 1092 390 1092 432V590H940V432Z" fill="#58616A"/>
+  <rect x="970" y="336" width="92" height="52" rx="20" fill="#6A7580"/>
+  <circle cx="1046" cy="360" r="6" fill="#C6D3DB" fill-opacity="0.75"/>
+  <rect x="720" y="500" width="170" height="16" rx="8" fill="#5E6871" fill-opacity="0.55"/>
+</svg>
